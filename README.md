@@ -68,7 +68,10 @@ Straight up assuming you're using Git here, and already have projects available.
 	`git clone git@github.com:USER_NAME/EMBER_APP_NAME.git ember`
 5. Do a git clone to the rails directory.
 	`git clone git@github.com:USER_NAME/RAILS_APP_NAME.git rails`
-6. `fig up`
+6. Make sure the Rails and Ruby versions in your `Dockerfile` match the versions in your Rails app.
+7. Make sure the MySQL version matches in your `fig.yml` file.
+8. Make sure your Rails app's `rails/config/database.yml` file has the same user name and password as listed in the `fig.yml` file.
+9. `fig up`
 
 
 
