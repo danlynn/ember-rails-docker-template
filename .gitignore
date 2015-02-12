@@ -1,0 +1,8 @@
+# Ignore OS files
+.DS_Store
+
+# Ignore project files
+/cordova
+/ember
+/rails
+
