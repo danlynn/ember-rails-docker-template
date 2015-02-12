@@ -1,0 +1,30 @@
+embersvr: &defaults
+  image: danlynn/ember-cli:0.1.15
+  volumes:
+    - ember:/myapp
+  command: server --watcher polling
+  ports:
+    - "4200:4200"
+    - "35729:35729"
+  links:
+    - railssvr
+
+mysqlsvr:
+  image: mysql:5.5
+  ports:
+    - "3306:3306"
+  environment:
+    - MYSQL_ROOT_PASSWORD=password
+    - MYSQL_DATABASE=core_development
+    - MYSQL_USER=webstop
+    - MYSQL_PASSWORD=password
+
+railssvr:
+  build: .
+  command: bundle exec rackup -p 3000
+  volumes:
+    - rails:/myapp
+  ports:
+    - "3000:3000"
+  links:
+    - mysqlsvr
