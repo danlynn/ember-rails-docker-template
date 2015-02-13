@@ -25,3 +25,8 @@ alias   rake='fig run railssvr rake'
 
 echo 'Configured aliases for current project:'
 echo '  npm, bower, ember, bundle, rails, rake'
+
+# Creates project directories if they don't exist
+mkdir -p cordova
+mkdir -p ember
+mkdir -p rails

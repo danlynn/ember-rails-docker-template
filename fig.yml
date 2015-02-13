@@ -16,7 +16,7 @@ mysqlsvr:
   environment:
     - MYSQL_ROOT_PASSWORD=password
     - MYSQL_DATABASE=core_development
-    - MYSQL_USER=webstop
+    - MYSQL_USER=developer
     - MYSQL_PASSWORD=password
 
 railssvr:
